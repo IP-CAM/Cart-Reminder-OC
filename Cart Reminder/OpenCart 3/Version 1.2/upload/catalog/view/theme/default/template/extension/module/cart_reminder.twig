@@ -1,0 +1,15 @@
+{% if cart.0 %}
+<div style="top: 0; left: 0; width: 100vw; height: 100vh; z-index: 99999; position: fixed; background-color: rgba(0,0,0,0.5);" id="cartreminder">
+
+	<div style="width: {{ width }}px; height: {{ height }}px; background-color: {{ color }}; border-radius: 10px; left:calc(50% - calc({{ width }}px / 2)); top: calc(50% - calc({{ height }}px / 2)); display: block; position: absolute;" id="CartReminderInner">
+		<div style="width: {{ width }}px; height: 50%; background-color: white; display: block; position: relative; border-radius: 10px 10px 0px 0px;" id="upperinnercartreminder">
+			<a style="height: 80%; background-image: url(catalog/view/theme/default/image/cart_reminder_button.png); display: block; margin: 0 auto; top: 10%; position: relative; background-size: contain; background-color: {{ color }};" id="cartimagereminder"></a>
+			<script>var cw = $('#cartimagereminder').height(); $('#cartimagereminder').css({'width':cw+'px'});</script>
+			<a onclick="$('#cartreminder').animate({opacity: '0'}, 300); setTimeout(function(){$('#cartreminder').hide();},300)" id="crosscartreminder" style="color: {{ color }}; font-size: 40px; cursor: pointer; right: 20px; top: 20px; position: absolute;">&#10006;</a>
+		</div>
+		<center><span id="cartreminderlabell" style="color: white; font-weight: 300; font-size: 24px; top: 30px; position: relative; text-shadow: 1px 1px 4px rgba(0, 0, 0, 1);">{{ cartreminder_label_value }}</span></center>
+		<a href="{{ urlredirect }}"style="position: absolute; bottom: 20px; left: calc(50% - 100px); height:40px; width:200px; display:block;" class="btn btn-primary">{{ cartreminder_button_value }}</a>
+	</div>
+	
+</div>
+{% endif %}
