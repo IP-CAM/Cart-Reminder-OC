@@ -1,2 +1,2 @@
-# Opencart-Modules
-This is the rep where I'm going to be posting all my modules for opencart
+# Cart-Reminder-OC
+Repository for my Cart Reminder plugin for OpenCart.
